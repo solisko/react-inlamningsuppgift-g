@@ -1,10 +1,12 @@
 import "../css/App.css";
-import Nav from "./Nav";
+import Header from "./Header";
+import Search from "./Search";
 
 function App() {
   return (
     <>
-      <Nav />
+      <Header />
+      <Search/>
     </>
   );
 }
