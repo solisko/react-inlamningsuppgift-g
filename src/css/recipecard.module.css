@@ -1,0 +1,11 @@
+.recipeCard{
+    background-color: rgb(220, 135, 220);
+    width: 350px;
+    margin: 10px auto;
+    overflow: hidden;
+    padding: 10px;
+}
+.image{
+    width: 100%;
+    height: auto;
+}

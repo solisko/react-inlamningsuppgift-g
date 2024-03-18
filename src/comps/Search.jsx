@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import styles from "../css/search.module.css";
 
 export default function Search({ searchResult, setSearchResult }) {
   const [input, setinput] = useState("");
@@ -21,8 +22,9 @@ export default function Search({ searchResult, setSearchResult }) {
   }, [input]);
 
   return (
-    <div>
+    <div className={styles.inputContainer}>
       <input
+        className={styles.input}
         value={input}
         ref={inputRef}
         onChange={() => setinput(inputRef.current.value)}
