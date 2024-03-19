@@ -3,9 +3,32 @@ import styles from "../css/search.module.css";
 
 export default function Search({ searchResult, setSearchResult }) {
   const [input, setinput] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const inputRef = useRef();
 
+  useEffect(()=>{
+    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+    .then ((response)=>{
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data)=>{
+      setSearchResult(data.meals || []);
+    })
+    .catch((error)=>{
+      console.error("Error fetching data:", error);
+      setErrorMsg("Error fetching data. Please try again later.");
+    })
+  }, [setSearchResult])
+
   useEffect(() => {
+    if (input.trim() === "") {
+      setErrorMsg("");
+      return;
+    }
+
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
       .then((response) => {
         if (!response.ok) {
@@ -14,12 +37,19 @@ export default function Search({ searchResult, setSearchResult }) {
         return response.json();
       })
       .then((data) => {
-        setSearchResult(data.meals);
+        if (data.meals) {
+          setSearchResult(data.meals);
+          setErrorMsg("");
+        } else {
+          setSearchResult([]);
+          setErrorMsg(`No recipes match with ${input}`);
+        }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
+        setErrorMsg("Error fetching data. Please try again later.");
       });
-  }, [input]);
+  }, [input, setSearchResult]);
 
   return (
     <div className={styles.inputContainer}>
@@ -31,6 +61,7 @@ export default function Search({ searchResult, setSearchResult }) {
         type="text"
         placeholder="Search for a recipe..."
       />
+      {errorMsg && <p className={styles.errorMsg}>{errorMsg}</p>}
     </div>
   );
 }
