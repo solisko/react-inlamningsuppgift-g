@@ -5,8 +5,11 @@ export default function RecipeCard({ meal }) {
   return (
     <div className={styles.recipeCard} >
       <img className={styles.image} src={meal.strMealThumb} alt="" />
+      <div >
       <h2>{meal.strMeal}</h2>
-      <button>View recipe</button>
+
+      </div>
+      <button className={styles.viewBtn} >View recipe</button>
     </div>
   );
 }

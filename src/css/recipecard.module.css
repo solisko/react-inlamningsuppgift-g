@@ -1,5 +1,6 @@
 .recipeCard{
     background-color: rgb(220, 135, 220);
+    border-radius: 20px;
     width: 350px;
     margin: 10px auto;
     overflow: hidden;
@@ -8,4 +9,5 @@
 .image{
     width: 100%;
     height: auto;
+    border-radius: 20px;
 }

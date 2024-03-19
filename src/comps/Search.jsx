@@ -15,7 +15,7 @@ export default function Search({ searchResult, setSearchResult }) {
       return response.json();
     })
     .then((data)=>{
-      setSearchResult(data.meals || []);
+      setSearchResult(data.meals);
     })
     .catch((error)=>{
       console.error("Error fetching data:", error);
@@ -24,10 +24,10 @@ export default function Search({ searchResult, setSearchResult }) {
   }, [setSearchResult])
 
   useEffect(() => {
-    if (input.trim() === "") {
-      setErrorMsg("");
-      return;
-    }
+    // if (input.trim() === "") {
+    //   setErrorMsg("");
+    //   return;
+    // }
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
       .then((response) => {
