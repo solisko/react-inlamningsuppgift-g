@@ -1,0 +1,38 @@
+.recipeCard {
+  background-color: rgb(220, 135, 220);
+  border-radius: 200px 200px 20px 20px;
+  width: 350px;
+  margin: 10px auto;
+  overflow: hidden;
+  padding: 10px;
+}
+.imgSection {
+  text-align: center;
+}
+.imgSection h2 {
+  font-size: 35px;
+  color: beige;
+}
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 200px 200px 20px 20px;
+}
+.btnSection {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.viewBtn {
+  cursor: pointer;
+  background-color: orange;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: beige;
+  padding: 5px 10px;
+  text-align: center;
+}
+.viewBtn:hover{
+    background-color: rgb(251, 196, 95);
+}
