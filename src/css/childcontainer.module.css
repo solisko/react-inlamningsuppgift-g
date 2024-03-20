@@ -1,0 +1,9 @@
+.innerCont {
+    /* flex: 1; */
+    padding: 10px;
+    margin: 10px;
+    background-color: beige;
+    border-radius: 8px;
+    /* align-items: center; */
+  }
+  
