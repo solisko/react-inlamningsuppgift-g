@@ -5,24 +5,20 @@ import Search from "./Search";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
 import Container from "./Container";
-import ChildContainer from "./ChildContainer";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [recipeId, setRecipeId] = useState("");
+  const [recipe, setRecipe] = useState({});
 
   return (
     <>
       <main className="mainCont">
         <Header />
-        <Search searchResult={searchResult} setSearchResult={setSearchResult} />
+        <Search searchResult={searchResult} setSearchResult={setSearchResult} setRecipe={setRecipe}/>
         <Container>
-          {/* <ChildContainer> */}
           <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} />
-          {/* </ChildContainer> */}
-          {/* <ChildContainer> */}
-          <RecipeDetails recipeId={recipeId} />
-          {/* </ChildContainer> */}
+          <RecipeDetails recipeId={recipeId} recipe={recipe} setRecipe={setRecipe} />
         </Container>
       </main>
     </>

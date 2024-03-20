@@ -1,27 +1,27 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "../css/search.module.css";
 
-export default function Search({ searchResult, setSearchResult }) {
+export default function Search({ setRecipe, setSearchResult }) {
   const [input, setinput] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const inputRef = useRef();
 
-  useEffect(()=>{
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
-    .then ((response)=>{
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
-    })
-    .then((data)=>{
-      setSearchResult(data.meals);
-    })
-    .catch((error)=>{
-      console.error("Error fetching data:", error);
-      setErrorMsg("Error fetching data. Please try again later.");
-    })
-  }, [setSearchResult])
+  // useEffect(() => {
+  //   fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setSearchResult(data.meals);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //       setErrorMsg("Error fetching data. Please try again later.");
+  //     });
+  // }, [setSearchResult]);
 
   useEffect(() => {
     // if (input.trim() === "") {
@@ -42,6 +42,7 @@ export default function Search({ searchResult, setSearchResult }) {
           setErrorMsg("");
         } else {
           setSearchResult([]);
+          setRecipe("");
           setErrorMsg(`No recipes match with ${input}`);
         }
       })
@@ -49,7 +50,7 @@ export default function Search({ searchResult, setSearchResult }) {
         console.error("Error fetching data:", error);
         setErrorMsg("Error fetching data. Please try again later.");
       });
-  }, [input, setSearchResult]);
+  }, [input, setSearchResult, setRecipe]);
 
   return (
     <div className={styles.inputContainer}>
