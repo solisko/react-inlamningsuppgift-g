@@ -1,3 +1,4 @@
+import styles from "../css/recipedetails.module.css";
 import { useEffect, useState } from "react";
 
 export default function RecipeDetails({ recipeId }) {
@@ -15,10 +16,10 @@ export default function RecipeDetails({ recipeId }) {
   }, [recipeId]);
 
   return (
-    <div>
+    <div className={styles.recipeCard} >
       <div>
         <h1>{recipe.strMeal}</h1>
-        <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+        <img className={styles.image} src={recipe.strMealThumb} alt={recipe.strMeal} />
       </div>
     </div>
   );

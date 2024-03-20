@@ -13,16 +13,18 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Search searchResult={searchResult} setSearchResult={setSearchResult} />
-      <Container>
-        {/* <ChildContainer> */}
+      <main className="mainCont">
+        <Header />
+        <Search searchResult={searchResult} setSearchResult={setSearchResult} />
+        <Container>
+          {/* <ChildContainer> */}
           <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} />
-        {/* </ChildContainer> */}
-        {/* <ChildContainer> */}
+          {/* </ChildContainer> */}
+          {/* <ChildContainer> */}
           <RecipeDetails recipeId={recipeId} />
-        {/* </ChildContainer> */}
-      </Container>
+          {/* </ChildContainer> */}
+        </Container>
+      </main>
     </>
   );
 }
