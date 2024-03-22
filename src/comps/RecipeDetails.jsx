@@ -46,11 +46,6 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
       <section className={styles.ingredients}>
         <h3>Ingredients</h3>
         <table>
-          {/* <tr>
-            <th>Measur</th>
-            <th>
-            </th>
-          </tr> */}
           {Object.keys(recipe)
             .filter((key) => key.startsWith("strIngredient") && recipe[key])
             .map((key, index) => (
