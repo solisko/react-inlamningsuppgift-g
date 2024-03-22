@@ -1,19 +1,36 @@
-.recipeCard{
-    background-color: orange;
-    border-radius: 20px;
-    padding: 10px 20px;
-    height: fit-content;
-    margin-left: 30px;
+.recipeCard {
+  background-color: orange;
+  border-radius: 20px;
+  padding: 10px 20px;
+  height: fit-content;
+  margin-left: 30px;
 }
-.nameImage{
-    text-align: center;
+.nameImage {
+  text-align: center;
 }
-.image{
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+.catAndIng {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.catAndIng h2 {
+  padding-bottom: 10px;
+}
+.table {
+  font-size: 20px;
+  background-color: rgb(255, 193, 79);
+  border: 1px solid beige;
 }
 
-.ingredients{
-    font-weight: bold;
+.table td {
+  border: 1px solid beige;
+  padding: 3px 10px;
+}
+.ingredients {
+  font-weight: bold;
 }

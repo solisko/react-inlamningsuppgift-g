@@ -37,30 +37,42 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
         />
       </div>
 
-      <section className={styles.categories}>
-        <p>Category: {recipe.strCategory}</p>
-        <p>Area: {recipe.strArea}</p>
-        <br />
-      </section>
-
-      <section className={styles.ingredientSec}>
-        <h3>Ingredients</h3>
-        <table>
-          {Object.keys(recipe)
-            .filter((key) => key.startsWith("strIngredient") && recipe[key])
-            .map((key, index) => (
+      <div className={styles.catAndIng}>
+        <section className={styles.ingredientSec}>
+          {/* <h2>Ingredients</h2> */}
+          <table className={styles.table}>
+            <tbody>
               <tr>
-                <td key={index}>{recipe[`strMeasure${index + 1}`]}</td>
-                <td className={styles.ingredients}>{recipe[key]}</td>
+                <th>Ingredients</th>
               </tr>
-            ))}
-        </table>
-        <ul></ul>
-      </section>
+              {Object.keys(recipe)
+                .filter((key) => key.startsWith("strIngredient") && recipe[key])
+                .map((key, index) => (
+                  <tr key={index}>
+                    <td>{recipe[`strMeasure${index + 1}`]}</td>
+                    <td>
+                      <strong>{recipe[key]}</strong>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </section>
+        <section className={styles.categories}>
+          <p>
+            Category: <strong>{recipe.strCategory}</strong>
+          </p>
+          <p>
+            Area: <strong>{recipe.strArea}</strong>
+          </p>
+          <br />
+        </section>
+      </div>
 
       <br />
       <section className={styles.instructions}>
         <h3>Instructions</h3>
+        <br />
         <p>
           YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
         </p>
@@ -70,7 +82,12 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
       </section>
 
       <section className={styles.tags}>
-        <p>Tags: {recipe.strTags}</p>
+        <p>
+          Tags:{" "}
+          <strong>
+            {recipe.strTags ? recipe.strTags.trim().split(",").join(", ") : ""}
+          </strong>
+        </p>
       </section>
     </div>
   );
