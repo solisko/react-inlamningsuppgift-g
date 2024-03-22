@@ -11,6 +11,7 @@ export default function RecipeItem({ recipe, setRecipeId }) {
         <button
           onClick={() => {
             setRecipeId(recipe.idMeal);
+            window.scrollTo({ top: 200, behavior: "smooth" });
           }}
           className={styles.viewBtn}
         >
