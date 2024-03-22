@@ -7,8 +7,10 @@
 }
 body {
   background-color: bisque;
-}
-.mainCont {
   width: 1000px;
   margin: 0 auto;
 }
+.mainCont {
+  display: flex;
+}
+

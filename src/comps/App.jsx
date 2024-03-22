@@ -13,13 +13,23 @@ function App() {
 
   return (
     <>
+      <Header />
       <main className="mainCont">
-        <Header />
-        <Search searchResult={searchResult} setSearchResult={setSearchResult} setRecipe={setRecipe}/>
-        <Container>
+        <div className="searchCont">
+          <Search
+            searchResult={searchResult}
+            setSearchResult={setSearchResult}
+            setRecipe={setRecipe}
+          />
           <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} />
-          <RecipeDetails recipeId={recipeId} recipe={recipe} setRecipe={setRecipe} />
-        </Container>
+        </div>
+        <div className="detailsCont">
+          <RecipeDetails
+            recipeId={recipeId}
+            recipe={recipe}
+            setRecipe={setRecipe}
+          />
+        </div>
       </main>
     </>
   );
