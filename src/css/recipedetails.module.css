@@ -1,10 +1,12 @@
 .recipeCard{
     background-color: orange;
     border-radius: 20px;
-    padding: 10px;
+    padding: 10px 20px;
     height: fit-content;
     margin-left: 30px;
-    text-align: end;
+}
+.nameImage{
+    text-align: center;
 }
 .image{
     width: 100%;

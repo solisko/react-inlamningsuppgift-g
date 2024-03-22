@@ -2,7 +2,6 @@ import styles from "../css/recipedetails.module.css";
 import { useEffect } from "react";
 
 export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
-
   useEffect(() => {
     async function fetchMeal() {
       try {
@@ -29,7 +28,7 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
 
   return (
     <div className={styles.recipeCard}>
-      <div>
+      <div className={styles.nameImage}>
         <h1>{recipe.strMeal}</h1>
         <img
           className={styles.image}
@@ -37,8 +36,46 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
           alt={recipe.strMeal}
         />
       </div>
+
+      <section className={styles.categories}>
+        <p>Category: {recipe.strCategory}</p>
+        <p>Area: {recipe.strArea}</p>
+        <br />
+      </section>
+
+      <section className={styles.ingredients}>
+        <h3>Ingredients</h3>
+        <table>
+          {/* <tr>
+            <th>Measur</th>
+            <th>
+            </th>
+          </tr> */}
+          {Object.keys(recipe)
+            .filter((key) => key.startsWith("strIngredient") && recipe[key])
+            .map((key, index) => (
+              <tr>
+                <td key={index}>{recipe[`strMeasure${index + 1}`]}</td>
+                <td>{recipe[key]}</td>
+              </tr>
+            ))}
+        </table>
+        <ul></ul>
+      </section>
+
+      <br />
       <section className={styles.instructions}>
+        <h3>Instructions</h3>
+        <p>
+          YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
+        </p>
+        <br />
         <p>{recipe.strInstructions}</p>
+        <br />
+      </section>
+
+      <section className={styles.tags}>
+        <p>Tags: {recipe.strTags}</p>
       </section>
     </div>
   );
