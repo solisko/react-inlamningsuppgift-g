@@ -13,3 +13,7 @@
     height: auto;
     border-radius: 20px;
 }
+
+.ingredients{
+    font-weight: bold;
+}

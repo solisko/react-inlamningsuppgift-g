@@ -43,7 +43,7 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
         <br />
       </section>
 
-      <section className={styles.ingredients}>
+      <section className={styles.ingredientSec}>
         <h3>Ingredients</h3>
         <table>
           {Object.keys(recipe)
@@ -51,7 +51,7 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
             .map((key, index) => (
               <tr>
                 <td key={index}>{recipe[`strMeasure${index + 1}`]}</td>
-                <td>{recipe[key]}</td>
+                <td className={styles.ingredients}>{recipe[key]}</td>
               </tr>
             ))}
         </table>
