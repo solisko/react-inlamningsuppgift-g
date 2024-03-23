@@ -4,6 +4,7 @@ import Header from "./Header";
 import Search from "./Search";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
+import Ratings from "./Ratings";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);

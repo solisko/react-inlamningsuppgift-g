@@ -1,4 +1,5 @@
 import styles from "../css/recipeitem.module.css";
+import Ratings from "./Ratings";
 
 export default function RecipeItem({ recipe, setRecipeId }) {
   return (
@@ -17,7 +18,9 @@ export default function RecipeItem({ recipe, setRecipeId }) {
         >
           View recipe
         </button>
-        <p>Rating</p>
+        <div>
+          <Ratings />
+        </div>
       </section>
     </div>
   );

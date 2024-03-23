@@ -1,13 +1,11 @@
 .recipeCard {
   /* background-color: rgb(220, 135, 220); */
-  background-color: rgb(255, 187, 85);
+  background-color: rgb(251, 216, 244);
   border-radius: 20px;
   width: 350px;
-  margin: 10px auto;
+  margin: 30px auto;
   overflow: hidden;
   box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
-
-  /* padding: 10px; */
 }
 .imgSection {
   text-align: center;
@@ -36,8 +34,7 @@
   padding: 5px 10px;
   text-align: center;
   box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.2);
-
 }
-.viewBtn:hover{
-    background-color: rgb(251, 196, 95);
+.viewBtn:hover {
+  background-color: rgb(251, 196, 95);
 }
