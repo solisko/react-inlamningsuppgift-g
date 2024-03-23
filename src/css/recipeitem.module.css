@@ -1,10 +1,12 @@
 .recipeCard {
   background-color: rgb(220, 135, 220);
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 20px;
   width: 350px;
   margin: 10px auto;
   overflow: hidden;
-  padding: 10px;
+  box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
+
+  /* padding: 10px; */
 }
 .imgSection {
   text-align: center;
@@ -16,12 +18,12 @@
 .image {
   width: 100%;
   height: auto;
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 20px 20px 0 0;
 }
 .btnSection {
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 10px;
 }
 .viewBtn {
   cursor: pointer;

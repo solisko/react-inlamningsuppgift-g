@@ -4,7 +4,6 @@ import Header from "./Header";
 import Search from "./Search";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
-import Container from "./Container";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
@@ -15,7 +14,7 @@ function App() {
     <>
       <Header />
       <main className="mainCont">
-        <div className="searchCont">
+        <div>
           <Search
             searchResult={searchResult}
             setSearchResult={setSearchResult}
@@ -23,7 +22,7 @@ function App() {
           />
           <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} />
         </div>
-        <div className="detailsCont">
+        <div>
           <RecipeDetails
             recipeId={recipeId}
             recipe={recipe}
