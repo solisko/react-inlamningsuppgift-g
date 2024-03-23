@@ -68,10 +68,8 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
           </section>
         </div>
 
-        {/* <br /> */}
         <section className={styles.instructions}>
           <h2>Instructions</h2>
-          {/* <br /> */}
           <p>
             YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
           </p>
