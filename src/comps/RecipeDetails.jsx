@@ -36,58 +36,61 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
           alt={recipe.strMeal}
         />
       </div>
+      <div className={styles.textSection}>
+        <div className={styles.catAndIng}>
+          <section className={styles.ingredientSec}>
+            <h2>Ingredients</h2>
+            <table className={styles.table}>
+              <tbody>
+                {Object.keys(recipe)
+                  .filter(
+                    (key) => key.startsWith("strIngredient") && recipe[key]
+                  )
+                  .map((key, index) => (
+                    <tr key={index}>
+                      <td>{recipe[`strMeasure${index + 1}`]}</td>
+                      <td>
+                        <strong>{recipe[key]}</strong>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </section>
+          <section className={styles.categories}>
+            <p>
+              Category: <strong>{recipe.strCategory}</strong>
+            </p>
+            <p>
+              Area: <strong>{recipe.strArea}</strong>
+            </p>
+            <br />
+          </section>
+        </div>
 
-      <div className={styles.catAndIng}>
-        <section className={styles.ingredientSec}>
-          <table className={styles.table}>
-            <tbody>
-              <tr>
-                <th>Ingredients</th>
-              </tr>
-              {Object.keys(recipe)
-                .filter((key) => key.startsWith("strIngredient") && recipe[key])
-                .map((key, index) => (
-                  <tr key={index}>
-                    <td>{recipe[`strMeasure${index + 1}`]}</td>
-                    <td>
-                      <strong>{recipe[key]}</strong>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
-        </section>
-        <section className={styles.categories}>
+        <br />
+        <section className={styles.instructions}>
+          <h2>Instructions</h2>
+          <br />
           <p>
-            Category: <strong>{recipe.strCategory}</strong>
-          </p>
-          <p>
-            Area: <strong>{recipe.strArea}</strong>
+            YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
           </p>
           <br />
+          <p>{recipe.strInstructions}</p>
+          <br />
+        </section>
+
+        <section className={styles.tags}>
+          <p>
+            Tags:{" "}
+            <strong>
+              {recipe.strTags
+                ? recipe.strTags.trim().split(",").join(", ")
+                : ""}
+            </strong>
+          </p>
         </section>
       </div>
-
-      <br />
-      <section className={styles.instructions}>
-        <h3>Instructions</h3>
-        <br />
-        <p>
-          YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
-        </p>
-        <br />
-        <p>{recipe.strInstructions}</p>
-        <br />
-      </section>
-
-      <section className={styles.tags}>
-        <p>
-          Tags:{" "}
-          <strong>
-            {recipe.strTags ? recipe.strTags.trim().split(",").join(", ") : ""}
-          </strong>
-        </p>
-      </section>
     </div>
   );
 }

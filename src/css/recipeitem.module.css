@@ -1,5 +1,6 @@
 .recipeCard {
-  background-color: rgb(220, 135, 220);
+  /* background-color: rgb(220, 135, 220); */
+  background-color: rgb(255, 181, 71);
   border-radius: 20px;
   width: 350px;
   margin: 10px auto;
@@ -13,7 +14,7 @@
 }
 .imgSection h2 {
   font-size: 35px;
-  color: beige;
+  /* color: #333; */
 }
 .image {
   width: 100%;
