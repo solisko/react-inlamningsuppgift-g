@@ -1,15 +1,13 @@
-.inputContainer{
-    margin: 20px;
-    width: 300px;
-    /* position: relative; */
-    
+.inputContainer {
+  margin-bottom: 30px;
+  width: 350px;
 }
-.input{
-    background-color: beige;
-    border: 1px inset pink;
-    border-radius: 10px;
-    outline: none;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
+.input {
+  background-color: beige;
+  border: 1px inset pink;
+  border-radius: 10px;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
 }
