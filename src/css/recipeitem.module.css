@@ -1,6 +1,6 @@
 .recipeCard {
   /* background-color: rgb(220, 135, 220); */
-  background-color: rgb(255, 181, 71);
+  background-color: rgb(255, 187, 85);
   border-radius: 20px;
   width: 350px;
   margin: 10px auto;
@@ -35,6 +35,8 @@
   color: beige;
   padding: 5px 10px;
   text-align: center;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0, 0.2);
+
 }
 .viewBtn:hover{
     background-color: rgb(251, 196, 95);

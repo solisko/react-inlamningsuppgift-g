@@ -34,7 +34,7 @@
 }
 
 .textSection{
-  padding: 10px 20px;
+  padding: 0 20px 10px 20px;
 }
 .table {
   font-size: 20px;
@@ -48,4 +48,10 @@
 }
 .ingredients {
   font-weight: bold;
+}
+.instructions h2{
+  padding: 10px 0;
+}
+.tags{
+  text-align: end;
 }
