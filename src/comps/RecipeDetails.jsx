@@ -39,7 +39,6 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
 
       <div className={styles.catAndIng}>
         <section className={styles.ingredientSec}>
-          {/* <h2>Ingredients</h2> */}
           <table className={styles.table}>
             <tbody>
               <tr>
