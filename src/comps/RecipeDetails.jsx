@@ -1,5 +1,6 @@
 import styles from "../css/recipedetails.module.css";
 import { useEffect } from "react";
+import { FaHeart } from "react-icons/fa";
 
 export default function RecipeDetails({
   recipeId,
@@ -68,9 +69,15 @@ export default function RecipeDetails({
             </table>
           </section>
           <section className={styles.categories}>
-            <button onClick={handleFavoriteClick}>
-              {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-            </button>
+            <label>
+              <input
+                type="radio"
+                name="favorite"
+                value={isFavorite}
+                onClick={handleFavoriteClick}
+              />
+              <FaHeart color={isFavorite ? "#ff0000" : "#333"} size={30} />
+            </label>
             <p>
               Category: <strong>{recipe.strCategory}</strong>
             </p>

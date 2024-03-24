@@ -1,6 +1,6 @@
 .recipeCard {
   /* background-color: rgb(220, 135, 220); */
-  background-color: rgb(251, 216, 244);
+  background-color: whitesmoke;
   border-radius: 20px;
   width: 400px;
   margin: 30px auto;
@@ -21,7 +21,8 @@
 }
 .btnSection {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
+  align-items: center;
   padding: 10px;
 }
 .viewBtn {
@@ -37,4 +38,10 @@
 }
 .viewBtn:hover {
   background-color: rgb(251, 196, 95);
+}
+.ratingSection{
+  display: flex;
+}
+.ratingSection p{
+  margin-right: 5px;
 }
