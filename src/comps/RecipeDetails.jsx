@@ -76,7 +76,11 @@ export default function RecipeDetails({
                 value={isFavorite}
                 onClick={handleFavoriteClick}
               />
-              <FaHeart color={isFavorite ? "#ff0000" : "#333"} size={30} />
+              <FaHeart
+                className={styles.heart}
+                color={isFavorite ? "#ff0000" : "#333"}
+                size={30}
+              />
             </label>
             <p>
               Category: <strong>{recipe.strCategory}</strong>

@@ -8,7 +8,7 @@
 .nameImage {
   position: relative;
 }
-.nameImage h1{
+.nameImage h1 {
   position: absolute;
   text-align: center;
   top: 0;
@@ -32,10 +32,13 @@
 .catAndIng h2 {
   padding-bottom: 10px;
 }
-.categories{
+.categories {
   text-align: end;
 }
-.textSection{
+.heart {
+  cursor: pointer;
+}
+.textSection {
   padding: 0 20px 10px 20px;
 }
 .table {
@@ -51,9 +54,9 @@
 .ingredients {
   font-weight: bold;
 }
-.instructions h2{
+.instructions h2 {
   padding: 10px 0;
 }
-.tags{
+.tags {
   text-align: end;
 }
