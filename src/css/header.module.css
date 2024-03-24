@@ -1,15 +1,15 @@
 .header{
-    width: 1000px;
+    /* width: 1000px; */
     height: 160px;
-    margin: 30px auto;
-    background-color: #f55b9b;
+    margin: 0 auto;
+    /* background-color: #f55b9b; */
     /* background-color: #f6e657; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 4em;
     font-weight: 600;
-    border-radius: 15px;
-    box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
+    /* border-radius: 15px; */
+    /* box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2); */
 
 }

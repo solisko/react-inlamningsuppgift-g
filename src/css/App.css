@@ -8,10 +8,12 @@
 body {
   color: #333;
   background-color: bisque;
-  width: 1000px;
+  /* width: 1000px; */
   margin: 0 auto;
 }
 .mainCont {
   display: flex;
+  width: 1200px;
+  margin: 0 auto;
 }
 
