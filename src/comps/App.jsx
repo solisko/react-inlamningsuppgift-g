@@ -21,7 +21,7 @@ function App() {
             setSearchResult={setSearchResult}
             setRecipe={setRecipe}
           />
-          <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} />
+          <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} ratingsComp={Ratings} />
         </div>
         <div>
           <RecipeDetails

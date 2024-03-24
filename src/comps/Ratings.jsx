@@ -18,7 +18,7 @@ export default function Ratings() {
                 name="rating"
                 value={ratingValue}
                 onClick={() => setRating(ratingValue)}
-                />
+              />
               <FaStar
                 className={styles.star}
                 color={ratingValue <= (hover || rating) ? "#ffc107" : "#333"}

@@ -1,7 +1,6 @@
 import styles from "../css/recipeitem.module.css";
-import Ratings from "./Ratings";
 
-export default function RecipeItem({ recipe, setRecipeId }) {
+export default function RecipeItem({ recipe, setRecipeId, ratingsComp }) {
   return (
     <div className={styles.recipeCard}>
       <section className={styles.imgSection}>
@@ -18,9 +17,7 @@ export default function RecipeItem({ recipe, setRecipeId }) {
         >
           View recipe
         </button>
-        <div>
-          <Ratings />
-        </div>
+        <RatingsComp/>
       </section>
     </div>
   );

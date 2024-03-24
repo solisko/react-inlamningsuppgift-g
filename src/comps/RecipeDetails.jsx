@@ -1,5 +1,6 @@
 import styles from "../css/recipedetails.module.css";
 import { useEffect } from "react";
+import Ratings from "./Ratings";
 
 export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
   useEffect(() => {
