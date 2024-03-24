@@ -10,6 +10,15 @@ function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [recipeId, setRecipeId] = useState("");
   const [recipe, setRecipe] = useState({});
+  const [favorites, setFavorites] = useState([]);
+
+  const toggleFavorites = (recipeId) => {
+    if (favorites.includes(recipeId)) {
+      setFavorites(favorites.filter(id => id !== recipeId));
+    } else {
+      setFavorites([...favorites, recipeId]);
+    }
+  };
 
   return (
     <>
@@ -21,13 +30,19 @@ function App() {
             setSearchResult={setSearchResult}
             setRecipe={setRecipe}
           />
-          <RecipeList searchResult={searchResult} setRecipeId={setRecipeId} ratingsComp={Ratings} />
+          <RecipeList
+            searchResult={searchResult}
+            setRecipeId={setRecipeId}
+            ratingsComp={Ratings}
+          />
         </div>
         <div>
           <RecipeDetails
             recipeId={recipeId}
             recipe={recipe}
             setRecipe={setRecipe}
+            toggleFavorites={toggleFavorites}
+            isFavorite={favorites.includes(recipeId)}
           />
         </div>
       </main>
