@@ -1,7 +1,8 @@
 .header{
-    /* width: 1000px; */
+    width: 1000px;
     height: 160px;
     margin: 0 auto;
+    margin-bottom: 20px;
     /* background-color: #f55b9b; */
     /* background-color: #f6e657; */
     display: flex;
