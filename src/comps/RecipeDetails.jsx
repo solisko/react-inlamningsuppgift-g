@@ -1,8 +1,17 @@
 import styles from "../css/recipedetails.module.css";
 import { useEffect } from "react";
-import Ratings from "./Ratings";
 
-export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
+export default function RecipeDetails({
+  recipeId,
+  recipe,
+  setRecipe,
+  toggleFavorites,
+  isFavorite,
+}) {
+  const handleFavoriteClick = () => {
+    toggleFavorites(recipeId);
+  };
+
   useEffect(() => {
     async function fetchMeal() {
       try {
@@ -59,6 +68,9 @@ export default function RecipeDetails({ recipeId, recipe, setRecipe }) {
             </table>
           </section>
           <section className={styles.categories}>
+            <button onClick={handleFavoriteClick}>
+              {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+            </button>
             <p>
               Category: <strong>{recipe.strCategory}</strong>
             </p>
