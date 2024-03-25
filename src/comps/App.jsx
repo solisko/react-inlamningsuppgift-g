@@ -14,7 +14,7 @@ function App() {
 
   const toggleFavorites = (recipeId) => {
     if (favorites.includes(recipeId)) {
-      setFavorites(favorites.filter(id => id !== recipeId));
+      setFavorites(favorites.filter((id) => id !== recipeId));
     } else {
       setFavorites([...favorites, recipeId]);
     }
@@ -24,12 +24,14 @@ function App() {
     <>
       <Header />
       <main className="mainCont">
-        <div>
+        <div className="searchCont">
           <Search
             searchResult={searchResult}
             setSearchResult={setSearchResult}
             setRecipe={setRecipe}
           />
+        </div>
+        <div className="listCont">
           <RecipeList
             searchResult={searchResult}
             setRecipeId={setRecipeId}
