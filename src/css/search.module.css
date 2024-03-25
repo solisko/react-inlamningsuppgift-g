@@ -1,6 +1,7 @@
 .inputContainer {
-  display: flex;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
   width: 500px;
 }
 .input {
@@ -24,5 +25,8 @@
   border-bottom-right-radius: 20px;
 }
 .errorMsg {
-  font-size: larger;
+  padding: 30px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: 400;
 }
