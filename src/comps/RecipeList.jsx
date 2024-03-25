@@ -23,7 +23,8 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
             </button>
             <section className={styles.ratingSection}>
               <p>Rating: </p>
-              <RatingsComp rating={recipe.rating} />
+              <RatingsComp/>
+              {/* <RatingsComp rating={recipe.rating} /> */}
             </section>
           </section>
         </div>

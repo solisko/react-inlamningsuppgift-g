@@ -6,10 +6,10 @@ export default function Ratings() {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
 
-  const setRatingForDish = () => {
-    // localStorage.setItem('ratings' ...localStorage.getItem('ratings'), { id: dishId, rating: ratingValue })
-    setRating(ratingValue)
-  }
+  // const setRatingForDish = () => {
+  //   // localStorage.setItem('ratings' ...localStorage.getItem('ratings'), { id: dishId, rating: ratingValue })
+  //   setRating(ratingValue)
+  // }
 
   return (
     <div>
@@ -21,7 +21,8 @@ export default function Ratings() {
               type="radio"
               name="rating"
               value={ratingValue}
-              onClick={setRatingForDish}
+              onClick={() => setRating(ratingValue)}
+              // onClick={setRatingForDish}
             />
             <FaStar
               className={styles.star}
