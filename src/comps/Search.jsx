@@ -38,6 +38,11 @@ export default function Search({ setRecipe, setSearchResult }) {
       })
       .then((data) => {
         if (data.meals) {
+          // hämta localStorage, lägg till för varje måltid en rating
+          const ratings = JSON.parse(localStorage.getItem('ratings'))
+          data.meals.forEach(meal => {
+            meal.rating = ratings.filter(r => r.id === meal.id)
+          });
           setSearchResult(data.meals);
           setErrorMsg("");
         } else {
