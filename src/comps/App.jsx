@@ -31,13 +31,6 @@ function App() {
             setRecipe={setRecipe}
           />
         </div>
-        <div className="listCont">
-          <RecipeList
-            searchResult={searchResult}
-            setRecipeId={setRecipeId}
-            ratingsComp={Ratings}
-          />
-        </div>
         <div>
           <RecipeDetails
             recipeId={recipeId}
@@ -45,6 +38,13 @@ function App() {
             setRecipe={setRecipe}
             toggleFavorites={toggleFavorites}
             isFavorite={favorites.includes(recipeId)}
+          />
+        </div>
+        <div className="listCont">
+          <RecipeList
+            searchResult={searchResult}
+            setRecipeId={setRecipeId}
+            ratingsComp={Ratings}
           />
         </div>
       </main>

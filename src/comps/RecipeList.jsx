@@ -17,7 +17,7 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
               <button
                 onClick={() => {
                   setRecipeId(recipe.idMeal);
-                  window.scrollTo({ top: 200, behavior: "smooth" });
+                  window.scrollTo({ top: 170, behavior: "smooth" });
                 }}
                 className={styles.viewBtn}
               >

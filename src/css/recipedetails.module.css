@@ -1,8 +1,9 @@
 .recipeCard {
   background-color: beige;
   border-radius: 20px;
+  width: 1000px;
   height: fit-content;
-  margin-left: 30px;
+  margin: 30px auto;
   box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
   padding: 15px 30px;
 }
@@ -24,13 +25,13 @@
 }
 .imageAndIngredients {
   display: flex;
-  /* justify-content: space-evenly; */
+  justify-content: space-evenly;
   padding-top: 20px;
 }
-.imgBox{
+/* .imgBox{
   padding-top: 30px;
   padding-right: 30px;
-}
+} */
 .image {
   width: 350px;
   height: 350px;

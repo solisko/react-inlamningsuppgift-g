@@ -6,6 +6,35 @@ export default function Search({ setRecipe, setSearchResult }) {
   const [errorMsg, setErrorMsg] = useState("");
   const inputRef = useRef();
 
+  // const handleSearch = () => {
+  //   if (input.trim() === "") {
+  //     setErrorMsg("Please type in something to search.");
+  //     return;
+  //   }
+
+  //   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       if (data.meals) {
+  //         setSearchResult(data.meals);
+  //         setErrorMsg("");
+  //       } else {
+  //         setSearchResult([]);
+  //         setRecipe("");
+  //         setErrorMsg(`No recipes match with ${input}`);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //       setErrorMsg("Error fetching data. Please try again later.");
+  //     });
+  // };
+
   useEffect(() => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
       .then((response) => {
@@ -46,7 +75,9 @@ export default function Search({ setRecipe, setSearchResult }) {
           type="text"
           placeholder="Search for a recipe..."
         />
-        {/* <button className={styles.searchBtn}>Search</button> */}
+        {/* <button className={styles.searchBtn} onClick={handleSearch}>
+          Search
+        </button> */}
       </div>
       <div>{errorMsg && <p className={styles.errorMsg}>{errorMsg}</p>}</div>
     </>
