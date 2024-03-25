@@ -5,7 +5,7 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
   console.log(searchResult);
 
   return (
-    <div>
+    <div className={styles.recipeList} >
       {searchResult.map((recipe, index) => (
         <div key={index} className={styles.recipeCard}>
           <section className={styles.imgSection}>
