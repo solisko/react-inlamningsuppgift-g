@@ -40,15 +40,32 @@ export default function RecipeDetails({
 
   return (
     <div className={styles.recipeCard}>
-      <div className={styles.title}>
+      <div className={styles.nameAndFavorite}>
         <h1>{recipe.strMeal}</h1>
+        <section className={styles.heartSection}>
+          <label>
+            <input
+              type="radio"
+              name="favorite"
+              value={isFavorite}
+              onClick={handleFavoriteClick}
+            />
+            <FaHeart
+              className={styles.heart}
+              color={isFavorite ? "#ff0000" : "#333"}
+              size={40}
+            />
+          </label>
+        </section>
       </div>
       <div className={styles.imageAndIngredients}>
-        <img
-          className={styles.image}
-          src={recipe.strMealThumb}
-          alt={recipe.strMeal}
-        />
+        <div className={styles.imgBox}>
+          <img
+            className={styles.image}
+            src={recipe.strMealThumb}
+            alt={recipe.strMeal}
+          />
+        </div>
         <section className={styles.ingredients}>
           <h2>Ingredients</h2>
           <table className={styles.table}>
@@ -74,40 +91,31 @@ export default function RecipeDetails({
           YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
         </p>
         <br />
-        <p>{recipe.strInstructions}</p>
-        <br />
+        {recipe.strInstructions.split("\r\n").map((instr, idx) => (
+          <p key={idx}>{instr}</p>
+        ))}
       </div>
 
       <div className={styles.tagsAndCategories}>
         <section className={styles.tags}>
-          <p>
-            Tags: <strong>{recipe.strTags}</strong>
-          </p>
+          <span>
+            Tags:{" "}
+            <strong>
+              {recipe.strTags
+                ? recipe.strTags.trim().split(",").join(", ")
+                : ""}
+            </strong>
+          </span>
         </section>
         <section className={styles.categories}>
-          <label>
-            <input
-              type="radio"
-              name="favorite"
-              value={isFavorite}
-              onClick={handleFavoriteClick}
-            />
-            <FaHeart
-              className={styles.heart}
-              color={isFavorite ? "#ff0000" : "#333"}
-              size={30}
-            />
-          </label>
           <p>
             Category: <strong>{recipe.strCategory}</strong>
           </p>
           <p>
             Area: <strong>{recipe.strArea}</strong>
           </p>
-          <br />
         </section>
       </div>
     </div>
-    // </div>
   );
 }

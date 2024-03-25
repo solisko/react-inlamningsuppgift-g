@@ -7,21 +7,22 @@
   overflow: hidden;
   box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
 }
-.imgSection {
-  text-align: center;
-}
-.imgSection h2 {
-  font-size: 35px;
-  /* color: #333; */
-}
 .image {
   width: 100%;
   height: auto;
   border-radius: 20px 20px 0 0;
 }
+.textSection{
+  text-align: center;
+  padding: 0 10px;
+  
+}
+.textSection h2 {
+  font-size: 35px;
+}
 .btnSection {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
 }
@@ -39,9 +40,9 @@
 .viewBtn:hover {
   background-color: rgb(251, 196, 95);
 }
-.ratingSection{
+.ratingSection {
   display: flex;
 }
-.ratingSection p{
+.ratingSection p {
   margin-right: 5px;
 }

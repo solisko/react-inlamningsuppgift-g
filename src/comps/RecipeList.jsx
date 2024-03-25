@@ -9,24 +9,26 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
         <div key={recipe.idMeal} className={styles.recipeCard}>
           <section className={styles.imgSection}>
             <img className={styles.image} src={recipe.strMealThumb} alt="" />
+          </section>
+          <div className={styles.textSection} >
             <h2>{recipe.strMeal}</h2>
-          </section>
-          <section className={styles.btnSection}>
-            <button
-              onClick={() => {
-                setRecipeId(recipe.idMeal);
-                window.scrollTo({ top: 200, behavior: "smooth" });
-              }}
-              className={styles.viewBtn}
-            >
-              View recipe
-            </button>
-            <section className={styles.ratingSection}>
-              <p>Rating: </p>
-              <RatingsComp/>
-              {/* <RatingsComp rating={recipe.rating} /> */}
+            <section className={styles.btnSection}>
+              <button
+                onClick={() => {
+                  setRecipeId(recipe.idMeal);
+                  window.scrollTo({ top: 200, behavior: "smooth" });
+                }}
+                className={styles.viewBtn}
+              >
+                View recipe
+              </button>
+              <section className={styles.ratingSection}>
+                <p>Rating: </p>
+                <RatingsComp />
+                {/* <RatingsComp rating={recipe.rating} /> */}
+              </section>
             </section>
-          </section>
+          </div>
         </div>
       ))}
     </div>
