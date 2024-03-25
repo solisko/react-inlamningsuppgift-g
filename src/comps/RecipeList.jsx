@@ -2,6 +2,7 @@ import styles from "../css/recipelist.module.css";
 
 export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
   const RatingsComp = ratingsComp;
+  console.log(searchResult)
 
   return (
     <div>
