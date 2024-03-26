@@ -88,7 +88,7 @@ export default function RecipeDetails({
       <div className={styles.instructions}>
         <h2>Instructions</h2>
         <p>
-          YouTube: <a href={recipe.strYoutube}>{recipe.strYoutube}</a>
+          YouTube: <a href={recipe.strYoutube} target="_blank">{recipe.strYoutube}</a>
         </p>
         <br />
         {recipe.strInstructions.split("\r\n").map((instr, idx) => (

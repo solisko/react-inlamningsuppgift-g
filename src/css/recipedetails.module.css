@@ -1,7 +1,7 @@
 .recipeCard {
   background-color: beige;
   border-radius: 20px;
-  width: 1000px;
+  width: 850px;
   height: fit-content;
   margin: 30px auto;
   box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
@@ -28,10 +28,10 @@
   justify-content: space-evenly;
   padding-top: 20px;
 }
-/* .imgBox{
-  padding-top: 30px;
+.imgBox{
+  padding-top: 40px;
   padding-right: 30px;
-} */
+}
 .image {
   width: 350px;
   height: 350px;
