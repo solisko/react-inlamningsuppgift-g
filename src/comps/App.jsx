@@ -5,12 +5,14 @@ import Search from "./Search";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
 import Ratings from "./Ratings";
+import FetchRecipes from "./FetchRecipes";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [recipeId, setRecipeId] = useState("");
   const [recipe, setRecipe] = useState({});
   const [favorites, setFavorites] = useState([]);
+  const fetchedAll = FetchRecipes();
 
   const toggleFavorites = (recipeId) => {
     if (favorites.includes(recipeId)) {
@@ -42,7 +44,12 @@ function App() {
         </div>
         <div className="listCont">
           <RecipeList
-            searchResult={searchResult}
+            data={fetchedAll}
+            setRecipeId={setRecipeId}
+            ratingsComp={Ratings}
+          />
+          <RecipeList
+            data={searchResult}
             setRecipeId={setRecipeId}
             ratingsComp={Ratings}
           />
