@@ -1,11 +1,16 @@
 import styles from "../css/overlay.module.css";
 
 export default function Overlay({ isOpen, onClose, children }) {
-  return (
+  const handleClose = (e)=>{
+    if (e.target === e.currentTarget){
+        onClose();
+    }
+  }
+    return (
     <>
       {isOpen ? (
         <div>
-          <div className={styles.overlay} onClick={onClose}>
+          <div className={styles.overlay} onClick={handleClose}>
             <div className={styles.container}>
 
               {children}

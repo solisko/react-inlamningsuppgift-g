@@ -1,21 +1,24 @@
-.overlay{
-    background-color: rgba(0,0,0,0.2);
-    width: 100vW;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-    z-index: 9;
+.overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 9;
+  overflow-y: auto;
 }
-.container{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    z-index: 10;
-    width: fit-content;
-    height: fit-content;
+.overlay * {
+  cursor: auto;
+}
+.container {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  width: fit-content;
+  height: fit-content;
 }
