@@ -6,34 +6,65 @@ export default function Search({ setRecipe, setSearchResult }) {
   const [errorMsg, setErrorMsg] = useState("");
   const inputRef = useRef();
 
+  const fetchData = async (searched) => {
+    try {
+      const response = await fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searched}`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      if (data.meals) {
+        setSearchResult(data.meals);
+        setErrorMsg("");
+      } else {
+        setSearchResult([]);
+        setRecipe("");
+        setErrorMsg(`No recipes match with ${searchTerm}`);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setErrorMsg("Error fetching data. Please try again later.");
+    }
+  };
+
+  useEffect(() => {
+    fetchData("");
+  }, []);
+
   const handleSearch = () => {
-    if (input.trim() === "") {
+    const searched = inputRef.current.value.trim();
+    if (searched === "") {
       setErrorMsg("Please type in something to make a search.");
       return;
     }
-
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.meals) {
-          setSearchResult(data.meals);
-          setErrorMsg("");
-        } else {
-          setSearchResult([]);
-          setRecipe("");
-          setErrorMsg(`No recipes match with ${input}`);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setErrorMsg("Error fetching data. Please try again later.");
-      });
+    setInput(searched);
+    fetchData(searched);
   };
+
+  //   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       if (data.meals) {
+  //         setSearchResult(data.meals);
+  //         setErrorMsg("");
+  //       } else {
+  //         setSearchResult([]);
+  //         setRecipe("");
+  //         setErrorMsg(`No recipes match with ${input}`);
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //       setErrorMsg("Error fetching data. Please try again later.");
+  //     });
+  // };
 
   // useEffect(() => {
   //   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)

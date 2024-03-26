@@ -1,13 +1,13 @@
 import styles from "../css/recipelist.module.css";
 
-export default function RecipeList({ data, setRecipeId, ratingsComp }) {
+export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
   const RatingsComp = ratingsComp;
-  console.log(data);
+  // console.log(searchResult);
 
 
   return (
     <div className={styles.recipeList} >
-      {data.map((recipe, index) => (
+      {searchResult.map((recipe, index) => (
         <div key={index} className={styles.recipeCard}>
           <section className={styles.imgSection}>
             <img className={styles.image} src={recipe.strMealThumb} alt="" />

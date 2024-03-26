@@ -44,12 +44,7 @@ function App() {
         </div>
         <div className="listCont">
           <RecipeList
-            data={fetchedAll}
-            setRecipeId={setRecipeId}
-            ratingsComp={Ratings}
-          />
-          <RecipeList
-            data={searchResult}
+            searchResult={searchResult}
             setRecipeId={setRecipeId}
             ratingsComp={Ratings}
           />
