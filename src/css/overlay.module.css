@@ -1,0 +1,21 @@
+.overlay{
+    background-color: rgba(0,0,0,0.2);
+    width: 100vW;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+}
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 10;
+    width: fit-content;
+    height: fit-content;
+}

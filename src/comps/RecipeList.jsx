@@ -1,6 +1,6 @@
 import styles from "../css/recipelist.module.css";
 
-export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
+export default function RecipeList({ searchResult, setRecipeId, ratingsComp, isOverlayOpen, setIsOverlayOpen }) {
   const RatingsComp = ratingsComp;
   // console.log(searchResult);
 
@@ -18,7 +18,8 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp }) {
               <button
                 onClick={() => {
                   setRecipeId(recipe.idMeal);
-                  window.scrollTo({ top: 170, behavior: "smooth" });
+                  // window.scrollTo({ top: 170, behavior: "smooth" });
+                  setIsOverlayOpen(!isOverlayOpen)
                 }}
                 className={styles.viewBtn}
               >

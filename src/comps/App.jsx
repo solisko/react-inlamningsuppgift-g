@@ -5,12 +5,14 @@ import Search from "./Search";
 import RecipeList from "./RecipeList";
 import RecipeDetails from "./RecipeDetails";
 import Ratings from "./Ratings";
+import Overlay from "./Overlay";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [recipeId, setRecipeId] = useState("");
   const [recipe, setRecipe] = useState({});
   const [favorites, setFavorites] = useState([]);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const toggleFavorites = (recipeId) => {
     if (favorites.includes(recipeId)) {
@@ -31,20 +33,25 @@ function App() {
             setRecipe={setRecipe}
           />
         </div>
-        <div>
-          <RecipeDetails
-            recipeId={recipeId}
-            recipe={recipe}
-            setRecipe={setRecipe}
-            toggleFavorites={toggleFavorites}
-            isFavorite={favorites.includes(recipeId)}
-          />
-        </div>
+          <Overlay
+            isOpen={isOverlayOpen}
+            onClose={() => setIsOverlayOpen(!isOverlayOpen)}
+          >
+            <RecipeDetails
+              recipeId={recipeId}
+              recipe={recipe}
+              setRecipe={setRecipe}
+              toggleFavorites={toggleFavorites}
+              isFavorite={favorites.includes(recipeId)}
+            />
+          </Overlay>
         <div className="listCont">
           <RecipeList
             searchResult={searchResult}
             setRecipeId={setRecipeId}
             ratingsComp={Ratings}
+            isOverlayOpen={isOverlayOpen}
+            setIsOverlayOpen={setIsOverlayOpen}
           />
         </div>
       </main>
