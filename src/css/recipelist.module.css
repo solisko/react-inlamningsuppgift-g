@@ -1,14 +1,15 @@
 .recipeList {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
+  margin: 0 auto;
+  justify-content: space-between;
 }
 .recipeCard {
   background-color: whitesmoke;
   border-radius: 20px;
-  width: 380px; 
+  width: 290px; 
   height: fit-content;
-  margin: 30px;
+  margin: 20px;
   /* overflow: hidden; */
   box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
 }
@@ -23,13 +24,14 @@
   
 }
 .textSection h2 {
-  font-size: 35px;
+  font-size: 30px;
 }
 .btnSection {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  margin: 10px 0;
+  /* padding: 10px; */
 }
 .viewBtn {
   cursor: pointer;
