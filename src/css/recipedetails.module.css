@@ -6,6 +6,7 @@
   margin: 30px auto;
   box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
   padding: 15px 30px;
+  cursor: default;
 }
 .nameAndFavorite {
   display: flex;
