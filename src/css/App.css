@@ -10,7 +10,7 @@ body {
   background-color: bisque;
 }
 .mainCont {
-  width: 1320px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
