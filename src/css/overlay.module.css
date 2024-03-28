@@ -9,9 +9,7 @@
   z-index: 9;
   overflow-y: auto;
 }
-.overlay * {
-  cursor: auto;
-}
+
 .container {
   /* position: absolute;
   top: 100px;
