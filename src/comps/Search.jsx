@@ -19,7 +19,6 @@ export default function Search({ setRecipe, setSearchResult }) {
         setSearchResult(data.meals);
         setErrorMsg("");
       } else {
-        setSearchResult([]);
         setRecipe("");
         setErrorMsg(`No recipes match with ${searched}`);
       }
