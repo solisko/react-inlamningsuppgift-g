@@ -8,6 +8,7 @@ export default function RecipeDetails({
   setRecipe,
   toggleFavorites,
   isFavorite,
+  onClose,
 }) {
   const handleFavoriteClick = () => {
     toggleFavorites(recipeId);
@@ -41,6 +42,9 @@ export default function RecipeDetails({
   return (
     <div className={styles.recipeCard}>
       <div className={styles.nameAndFavorite}>
+        <button className={styles.closeBtn} onClick={onClose}>
+          Close
+        </button>
         <h1>{recipe.strMeal}</h1>
         <section className={styles.heartSection}>
           <label>
@@ -88,7 +92,10 @@ export default function RecipeDetails({
       <div className={styles.instructions}>
         <h2>Instructions</h2>
         <p>
-          YouTube: <a href={recipe.strYoutube} target="_blank">{recipe.strYoutube}</a>
+          YouTube:{" "}
+          <a href={recipe.strYoutube} target="_blank">
+            {recipe.strYoutube}
+          </a>
         </p>
         <br />
         {recipe.strInstructions.split("\r\n").map((instr, idx) => (

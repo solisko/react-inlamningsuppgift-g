@@ -33,18 +33,19 @@ function App() {
             setRecipe={setRecipe}
           />
         </div>
-          <Overlay
-            isOpen={isOverlayOpen}
+        <Overlay
+          isOpen={isOverlayOpen}
+          onClose={() => setIsOverlayOpen(!isOverlayOpen)}
+        >
+          <RecipeDetails
+            recipeId={recipeId}
+            recipe={recipe}
+            setRecipe={setRecipe}
+            toggleFavorites={toggleFavorites}
+            isFavorite={favorites.includes(recipeId)}
             onClose={() => setIsOverlayOpen(!isOverlayOpen)}
-          >
-            <RecipeDetails
-              recipeId={recipeId}
-              recipe={recipe}
-              setRecipe={setRecipe}
-              toggleFavorites={toggleFavorites}
-              isFavorite={favorites.includes(recipeId)}
-            />
-          </Overlay>
+          />
+        </Overlay>
         <div className="listCont">
           <RecipeList
             searchResult={searchResult}

@@ -1,12 +1,16 @@
 import styles from "../css/recipelist.module.css";
 
-export default function RecipeList({ searchResult, setRecipeId, ratingsComp, isOverlayOpen, setIsOverlayOpen }) {
+export default function RecipeList({
+  searchResult,
+  setRecipeId,
+  ratingsComp,
+  isOverlayOpen,
+  setIsOverlayOpen,
+}) {
   const RatingsComp = ratingsComp;
-  // console.log(searchResult);
-
 
   return (
-    <div className={styles.recipeList} >
+    <div className={styles.recipeList}>
       {searchResult.map((recipe, index) => (
         <div key={index} className={styles.recipeCard}>
           <section className={styles.imgSection}>
@@ -18,8 +22,7 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp, isO
               <button
                 onClick={() => {
                   setRecipeId(recipe.idMeal);
-                  // window.scrollTo({ top: 170, behavior: "smooth" });
-                  setIsOverlayOpen(!isOverlayOpen)
+                  setIsOverlayOpen(!isOverlayOpen);
                 }}
                 className={styles.viewBtn}
               >
@@ -28,7 +31,6 @@ export default function RecipeList({ searchResult, setRecipeId, ratingsComp, isO
               <section className={styles.ratingSection}>
                 <p>Rating: </p>
                 <RatingsComp />
-                {/* <RatingsComp rating={recipe.rating} /> */}
               </section>
             </section>
           </div>

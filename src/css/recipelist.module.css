@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .recipeCard {
   background-color: whitesmoke;

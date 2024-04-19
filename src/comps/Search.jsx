@@ -21,7 +21,7 @@ export default function Search({ setRecipe, setSearchResult }) {
       } else {
         setSearchResult([]);
         setRecipe("");
-        setErrorMsg(`No recipes match with ${searchTerm}`);
+        setErrorMsg(`No recipes match with ${searched}`);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -43,57 +43,12 @@ export default function Search({ setRecipe, setSearchResult }) {
     fetchData(searched);
   };
 
-  //   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       if (data.meals) {
-  //         setSearchResult(data.meals);
-  //         setErrorMsg("");
-  //       } else {
-  //         setSearchResult([]);
-  //         setRecipe("");
-  //         setErrorMsg(`No recipes match with ${input}`);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //       setErrorMsg("Error fetching data. Please try again later.");
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Network response was not ok");
-  //       }
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       if (data.meals) {
-  //         // // hämta localStorage, lägg till för varje måltid en rating
-  //         // const ratings = JSON.parse(localStorage.getItem('ratings'))
-  //         // data.meals.forEach(meal => {
-  //         //   meal.rating = ratings.filter(r => r.id === meal.id)
-  //         // });
-  //         setSearchResult(data.meals);
-  //         setErrorMsg("");
-  //       } else {
-  //         setSearchResult([]);
-  //         setRecipe("");
-  //         setErrorMsg(`No recipes match with ${input}`);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data:", error);
-  //       setErrorMsg("Error fetching data. Please try again later.");
-  //     });
-  // }, [input, setSearchResult, setRecipe]);
+  const handleReset = () => {
+    setInput("");
+    fetchData("")
+    setErrorMsg("");
+    inputRef.current.value = "";
+  };
 
   return (
     <>
@@ -108,6 +63,9 @@ export default function Search({ setRecipe, setSearchResult }) {
         />
         <button className={styles.searchBtn} onClick={handleSearch}>
           Search
+        </button>
+        <button className={styles.resetBtn} onClick={handleReset}>
+          Reset
         </button>
       </div>
       <div>{errorMsg && <p className={styles.errorMsg}>{errorMsg}</p>}</div>

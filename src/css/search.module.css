@@ -14,7 +14,17 @@
   width: 100%;
   font-size: 16px;
 }
-.searchBtn {
+.searchBtn{
+
+  background-color: beige;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  border-right: none;
+}
+.resetBtn {
   background-color: beige;
   font-family: inherit;
   font-size: inherit;
