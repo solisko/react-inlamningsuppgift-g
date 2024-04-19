@@ -44,7 +44,7 @@ export default function Search({ setRecipe, setSearchResult }) {
 
   const handleReset = () => {
     setInput("");
-    fetchData("")
+    fetchData("");
     setErrorMsg("");
     inputRef.current.value = "";
   };
